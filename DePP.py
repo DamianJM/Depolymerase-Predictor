@@ -47,7 +47,7 @@ class Application(tk.Frame):
         self.text_box.grid(row=0, column=5, columnspan=4)
         scrollbar.grid(row=0, column=9, sticky='ns')
 
-        self.text_box.insert(tk.END, "Welcome to Depolymerase Predict! Please Upload Your Sequence File Once the Program has Finished Initialisation.")
+        self.text_box.insert(tk.END, "Welcome to Depolymerase Predictor (DePP)! Please Upload Your Sequence File Once the Program has Finished Initialisation.")
         self.text_box.insert(tk.END, "\n\nInitialising Modeller...")
 
         # Initialise the model
@@ -465,8 +465,6 @@ class Application(tk.Frame):
         
         self.save_file_predictions = save_file_predictions
 
-
-
         # # Save the results to a CSV file
         # with open("Predictions.csv", "w") as file:
         #     file.write("Gene,Probability_DePol,Sequence\n")
@@ -502,7 +500,7 @@ class Application(tk.Frame):
             results_str += f"{i+1}\t{probability:.3f}\t{confidence}\n"
 
         # Create a separate window to display the results
-        OutWindow = tk.Toplevel(self, bg="light sky blue")
+        OutWindow = tk.Toplevel(self, bg="SlateBlue1")
         result_text = tk.Text(OutWindow, width=150, height=20)
         result_text.grid(row=0, column=0, columnspan=5)
         result_text.insert(tk.END, "Prediction Results\n\n")
