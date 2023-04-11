@@ -1,4 +1,4 @@
-# Depolymerase-Predict
+# Depolymerase-Predictor (DePP)
 
 A machine learning software package that assists in the identification of bacteriophage depolymerases. Requires the installation of Scikt-Learn, BioPython, and Numpy.
 
