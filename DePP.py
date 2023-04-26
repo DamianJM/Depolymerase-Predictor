@@ -146,6 +146,9 @@ class Application(tk.Frame):
         self.W1.insert(tk.END, "\nTo do this, users can generate protein parameters using the tool for a new training set of sequences.")
         self.W1.insert(tk.END, "\nThis file can then replace the existing one in the directory and the tool relaunched to take this into account.")
         self.W1.insert(tk.END, "\nExpert users are free to modify model parameters as they see fit.")
+        #Add information on the availability of WebDePP
+        self.W1.insert(tk.END, "\n\nAn online version of this tool is available via the following link:")
+        self.W1.insert(tk.END, "\nhttps://timskvortsov.github.io/WebDePP/")
         # Add contact information
         self.W1.insert(tk.END, "\n\nSupport/Requests/Questions: damianjmagill@gmail.com")
 
@@ -237,7 +240,7 @@ class Application(tk.Frame):
     def DiMer(self, seq):
         k = 2  # i.e dipeptides
 
-        groups = {'A': '1', 'V': '1', 'G': '1', 'I': '1', 'L': '1', 'F': '2', 'T': '2', 'Y': '2',
+        groups = {'A': '1', 'V': '1', 'G': '1', 'I': '1', 'L': '1', 'F': '2', 'W': '2', 'Y': '2',
                 'M': '3', 'C': '3', 'H': '4', 'K': '4', 'R': '4', 'D': '5', 'E': '5',
                 'S': '6', 'T': '6', 'N': '6', 'Q': '6', 'P': '7'}
         # Map each amino acid to a physicochemical group
@@ -269,19 +272,19 @@ class Application(tk.Frame):
         except:
             count = {'1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '7': 0}
             for q in range(0, len(seq)):
-                if seq[q] == 'A' or seq[q] == 'V' or seq[q] == 'G':
-                    count['1'] += 1
-                if seq[q] == 'I' or seq[q] == 'L' or seq[q] == 'F' or seq[q] == 'P':
+                if seq[q] == 'A' or seq[q] == 'V' or seq[q] == 'G' or seq[q] == 'I' or seq[q] == 'L':
+                    count['1'] += 1 
+                if seq[q] == 'F' or seq[q] == 'W' or seq[q] == 'Y':
                     count['2'] += 1
-                if seq[q] == 'Y' or seq[q] == 'M' or seq[q] == 'T' or seq[q] == 'S':
+                if seq[q] == 'M' or seq[q] == 'C':
                     count['3'] += 1
-                if seq[q] == 'H' or seq[q] == 'N' or seq[q] == 'Q' or seq[q] == 'W':
+                if seq[q] == 'H' or seq[q] == 'K' or seq[q] == 'R':
                     count['4'] += 1
-                if seq[q] == 'R' or seq[q] == 'K':
-                    count['5'] += 1
                 if seq[q] == 'D' or seq[q] == 'E':
+                    count['5'] += 1
+                if seq[q] == 'S' or seq[q] == 'T' or seq[q] == 'N' or seq[q] == 'Q':
                     count['6'] += 1
-                if seq[q] == 'C':
+                if seq[q] == 'P':
                     count['7'] += 1
             val = list(count.values())  # [ 0,0,0,0,0,0,0]
             key = list(count.keys())  # ['1', '2', '3', '4', '5', '6', '7']
@@ -309,10 +312,9 @@ class Application(tk.Frame):
         k = 3  # Tripeptides
 
         # Physicochemical classification of the AAs
-        groups = {'A': '1', 'V': '1', 'G': '1', 'I': '1', 'L': '1',
-                'F': '2', 'T': '2', 'Y': '2', 'M': '3', 'C': '3',
-                'H': '4', 'K': '4', 'R': '4', 'D': '5', 'E': '5',
-                'S': '6', 'T': '6', 'N': '6', 'Q': '6', 'P': '7'}
+        groups = {'A': '1', 'V': '1', 'G': '1', 'I': '1', 'L': '1', 'F': '2', 'W': '2', 'Y': '2',
+                  'M': '3', 'C': '3', 'H': '4', 'K': '4', 'R': '4', 'D': '5', 'E': '5',
+                  'S': '6', 'T': '6', 'N': '6', 'Q': '6', 'P': '7'}
 
         # Generate all possible group combinations for vector creation
         iteratives = [''.join(i) for i in product("1234567", repeat=k)]
