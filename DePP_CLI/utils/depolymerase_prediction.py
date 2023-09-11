@@ -25,7 +25,7 @@ def train_model(training_set_path):
     pipelineDP = Pipeline(steps=[
         ('PFeatures', PolynomialFeatures(2)),
         ('scaler', MinMaxScaler()),
-        ('model', RandomForestClassifier(n_estimators=1500, criterion="entropy", max_features='auto',
+        ('model', RandomForestClassifier(n_estimators=1500, criterion="entropy", max_features='sqrt',
                                          max_depth=30, bootstrap=True, min_samples_leaf=3,
                                          oob_score=False, min_samples_split=2))
     ])
