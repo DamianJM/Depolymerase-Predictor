@@ -419,7 +419,7 @@ class Application(tk.Frame):
         pipelineDP = Pipeline(steps=[
             ('PFeatures', PolynomialFeatures(2)),  # Generate polynomial features
             ('scaler', MinMaxScaler()),  # Scale the features to a range of 0-1
-            ('model', RandomForestClassifier(n_estimators=1500, criterion="entropy", max_features='auto', max_depth=30, bootstrap=True, min_samples_leaf=3, oob_score=False, min_samples_split=2))])
+            ('model', RandomForestClassifier(n_estimators=1500, criterion="entropy", max_features='sqrt', max_depth=30, bootstrap=True, min_samples_leaf=3, oob_score=False, min_samples_split=2))])
 
         # Fit the machine learning model
         self.model_rf = pipelineDP.fit(X_train, y_train)  # Set the machine learning model as a class attribute
