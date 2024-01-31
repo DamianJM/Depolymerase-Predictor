@@ -5,6 +5,7 @@
 </p>
 
 DePP is a machine learning software package that assists in the identification of bacteriophage depolymerases. The model is trained on sequences of experimentally verified enzymes. The intended use of the software is to narrow the selection of potential genes linked to observed depolymerase activity to better direct lab work. It can however be absolutely applied to more complex datasets such as metagenomes. Please see our paper for how it works:
+
 Magill, D.J., Skvortsov, T.A. DePolymerase Predictor (DePP): a machine learning tool for the targeted identification of phage depolymerases. _BMC Bioinformatics_ **24**, 208 (2023);
 https://doi.org/10.1186/s12859-023-05341-w
 
