@@ -41,7 +41,7 @@ You are welcome to test the latest version of `DePP_CLI` by installing and runni
 - scikit-learn>=1.1
 ```
 # Usage
-To run `DePP_CLI`, you only need to provide an input `FASTA` file containing protein sequences you wish to analyse you and (optionally) the name of the output `CSV` file to save your predictions:
+To run `DePP_CLI`, you only need to provide an input `FASTA` file containing protein sequences you wish to analyse and (optionally) the name of the output `CSV` file to save your predictions:
 
 ```
 depp_cli.py -i <fasta file> -o <CSV file>
@@ -67,4 +67,4 @@ options:
 ```
 
 # Get in touch
-Contributions, suggestions, feature requests, and bug reports are welcome and appreciated. Please open an issue or contact Tim at t.skvortsov@qub.ac.uk. 
+Contributions, suggestions, feature requests, and bug reports are welcome and appreciated. Please open an issue or contact Tim Skvortsov at t.skvortsov@qub.ac.uk. 
