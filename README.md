@@ -31,7 +31,7 @@ To start using `DePP_CLI`, switch to the newly created environment using
 ```
 conda activate depp_cli
 ```
-You are welcome to test the latest version of `DePP_CLI` by installing and running it manually. DePP_CLI has the following dependencies:
+You are welcome to test the latest version of `DePP_CLI` by installing and running it manually. `DePP_CLI` has the following dependencies:
 
 ```
 - python>=3.9
