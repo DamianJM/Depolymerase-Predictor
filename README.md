@@ -67,4 +67,4 @@ options:
 ```
 
 # Get in touch
-Contributions, suggestions, feature requests, and bug reports are welcome and appreciated. Please open an issue or contact Tim on t.skvortsov@qub.ac.uk. 
+Contributions, suggestions, feature requests, and bug reports are welcome and appreciated. Please open an issue or contact Tim at t.skvortsov@qub.ac.uk. 
